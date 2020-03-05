@@ -1,0 +1,10 @@
+# package directories
+node_modules
+# JetBrains Rider
+.idea
+# macOS
+.DS_Store
+
+src/**/*.js
+test/**/*.js
+dist/

@@ -1,0 +1,11 @@
+{
+    "rootDir": "../",
+    "coverageDirectory": "<rootDir>/test/coverage",
+    "moduleFileExtensions": ["js", "json", "ts", "tsx"],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": ["**/?(*.)spec.(ts|tsx)"],
+    "coveragePathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/test"]
+  }
+  

@@ -1,0 +1,45 @@
+image: node:latest
+
+stages:
+  - lint
+  - test
+  - publish
+
+before_script:
+  - npm config set @91app:registry http://${NPM_REGISTRY_HOSTED}/
+  - echo "//${NPM_REGISTRY_HOSTED}/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+  - npm install
+
+lint_job:
+  stage: lint
+  image: node:10.13.0
+  script:
+    - npm run lint
+  except:
+    - tags
+
+test_job:
+  stage: test
+  image: node:10.13.0
+  script:
+    - npm run build
+    - npm run test:coverage
+    - rm -rf public
+    - mv test/coverage/lcov-report public
+  coverage: /All files\s*\|\s*([\d\.]+)/
+  artifacts:
+    paths:
+      - public
+  except:
+    - tags
+
+publish_job:
+  stage: publish
+  image: node:10.13.0
+  script:
+    - npm run build
+    - npm publish
+  only:
+    - tags
+  except:
+    - master

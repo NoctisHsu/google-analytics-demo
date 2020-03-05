@@ -1,0 +1,31 @@
+{
+  "name": "google-analytics-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "test:update": "jest -u --config=./test/jest.config.json",
+    "test:coverage": "jest --silent --config=./test/jest.config.json --coverage",
+    "lint": "eslint 'src/**/*.{js,ts,tsx}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoctisHsu/google-analytics-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NoctisHsu/google-analytics-demo/issues"
+  },
+  "homepage": "https://github.com/NoctisHsu/google-analytics-demo#readme",
+  "devDependencies": {
+    "@91app/nineyi.tool.tslint": "^2.5.1",
+    "@91app/nineyi.tool.typescript-boilerplate": "^1.1.14",
+    "@types/jest": "^25.1.3",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.3"
+  }
+}
