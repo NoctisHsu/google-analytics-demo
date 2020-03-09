@@ -1,4 +1,3 @@
-// eslint-disable-next-line
 module.exports = wallaby => ({
     files: [
         './test/jest.config.json',
