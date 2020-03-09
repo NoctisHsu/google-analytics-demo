@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "webpack-dev-server",
-    "build": "webpack --mode=production",
+    "build": "npm i && webpack --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:update": "jest -u --config=./test/jest.config.json",
     "test:coverage": "jest --silent --config=./test/jest.config.json --coverage",
